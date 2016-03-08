@@ -6,6 +6,9 @@ MAINTAINER Nimrod Nagy <nimrod.nagy@lynxsolutions.eu>
 RUN apt-get update && apt-get install -y rsync \
   && rm -r /var/lib/apt/lists/*
 
+#install mysql pdo
+RUN docker-php-ext-install pdo pdo_mysql
+
 # Set correct entrypoint
 CMD ["bash"]
 ENTRYPOINT ["/bin/sh", "-c"]

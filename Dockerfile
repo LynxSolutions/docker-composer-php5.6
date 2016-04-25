@@ -10,5 +10,5 @@ RUN apt-get update && apt-get install -y openssh-client rsync \
 RUN docker-php-ext-install pdo pdo_mysql
 
 # Set correct entrypoint
-CMD ["bash"]
-ENTRYPOINT ["/bin/sh", "-c"]
+CMD ["/bin/bash"]
+ENTRYPOINT []

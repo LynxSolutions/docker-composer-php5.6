@@ -8,7 +8,7 @@ RUN apt-get update \
   && rm -r /var/lib/apt/lists/*
 
 #install mysql pdo
-RUN docker-php-ext-install pdo pdo_mysql
+RUN docker-php-ext-install pdo pdo_mysql soap
 
 # Set correct entrypoint
 CMD ["/bin/bash"]

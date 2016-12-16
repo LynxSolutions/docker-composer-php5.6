@@ -3,9 +3,11 @@ FROM composer/composer:base-php5
 MAINTAINER Nimrod Nagy <nimrod.nagy@lynxsolutions.eu>
 
 # Install rsync for deployment
-RUN add-apt-repository ppa:ondrej/php \
+RUN && apt-get update \
+  && apt-get install -y openssh-client rsync software-properties-common \
+  && add-apt-repository ppa:ondrej/php \
   && apt-get update \
-  && apt-get install -y openssh-client rsync php5.6-soap \
+  && apt-get install -y php5.6-soap \
   && rm -r /var/lib/apt/lists/*
 
 #install mysql pdo

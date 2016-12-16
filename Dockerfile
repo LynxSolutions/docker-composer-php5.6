@@ -1,5 +1,5 @@
 # Pull base image.
-FROM composer/composer:base-php5
+FROM composer/composer:master-php5
 MAINTAINER Nimrod Nagy <nimrod.nagy@lynxsolutions.eu>
 
 # Install rsync for deployment

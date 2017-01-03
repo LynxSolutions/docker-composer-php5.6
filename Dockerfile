@@ -4,11 +4,11 @@ MAINTAINER Nimrod Nagy <nimrod.nagy@lynxsolutions.eu>
 
 # Install rsync for deployment
 RUN apt-get update \
-  && apt-get install -y openssh-client rsync php-soap \
+  && apt-get install -y openssh-client rsync php-soap php5-gd \
   && rm -r /var/lib/apt/lists/*
 
 #install mysql pdo
-RUN docker-php-ext-install pdo pdo_mysql soap
+RUN docker-php-ext-install pdo pdo_mysql soap gd
 
 # Set correct entrypoint
 CMD ["/bin/bash"]
